@@ -1,0 +1,158 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#checkSidNav {
+	display: none;
+}
+
+.side-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 100vh;
+	box-shadow: 1px 70px 5px grey;
+	overflow: hidden;
+	z-index: 2;
+	transition: width .5s;
+
+	background-color: #19222a;
+}
+
+.btn-side-nav {
+	position: fixed;
+	font-size: 25pt;
+	left: 15px;
+	top: 20px;
+	z-index: 3;
+	cursor: pointer;
+
+	color: white;
+
+	transition: left .5s; 
+}
+
+#checkSidNav:checked ~ .side-nav {
+	width: 190px;
+}
+
+#checkSidNav:checked ~ .btn-side-nav {
+	left: 140px;
+}
+
+#checkSidNav:checked ~ .nav-bar {
+	left: 190px;
+}
+
+#checkSidNav:checked ~ .side-nav span {
+	visibility: visible;
+	transform: translate(0px);
+	opacity: 1;
+
+}
+
+.menu-side-nav {
+	margin-top: 80px;
+
+	color: white;
+}
+
+.menu-side-nav li {
+	padding: 10px;
+	height: 50px;
+	margin-bottom: 10px;	
+}
+
+.menu-side-nav li:hover {
+	background-color: #0998fa;
+	cursor: pointer;
+
+	transition: background-color .3s;
+}
+
+.menu-side-nav li:hover .menu-item-icon {
+	transform: scale(1.2); 
+}
+
+.menu-item-icon {
+	float: left;
+	width: 30px;
+	height: 30px;
+	background-size: 100%;
+
+	transition: transform .3s;
+
+	margin-left: 5px;
+}
+
+.house {
+	background-image: url(../img/house.svg);
+}
+
+.user {
+	background-image: url(../img/user.svg);
+}
+
+.conf {
+	background-image: url(../img/settings.svg);
+}
+
+.trash {
+	background-image: url(../img/trash.svg);
+}
+
+.chat {
+	background-image: url(../img/chat.svg);
+}
+
+.shopping-cart {
+	background-image: url(../img/shopping-cart.svg);
+}
+
+.menu-item {
+	position: relative;
+
+	display: flex;
+	align-items: center;
+}
+
+.menu-item span {
+	white-space: nowrap;
+	position: absolute;
+	left: 55px;
+	visibility: hidden;
+	transform: translate(20px);
+	transition: .5s;
+	opacity: 0;
+}
+
+.nav-bar {
+	position: fixed;
+	left: 60px;
+	width: 100%;
+	height: 70px;
+	background-color: #19222a;
+	box-shadow: 1px -30px 50px grey;
+	z-index: 1;
+	transition: left .5s;
+
+	padding-left: 20px;
+
+	display: flex;
+	align-items: center;
+
+	color: white;
+	font-weight: bold;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+}
